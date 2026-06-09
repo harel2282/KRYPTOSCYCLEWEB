@@ -199,16 +199,32 @@ nav{
 
 /* ADD TO CART */
 .add-to-cart{
-  display:flex;align-items:center;justify-content:center;gap:0.7rem;
-  width:100%;padding:1.1rem 2rem;
-  background:var(--gold);color:var(--black);
-  font-family:'Bebas Neue',serif;font-size:1.1rem;letter-spacing:0.2em;
+  display:flex;align-items:center;justify-content:center;gap:0.8rem;
+  width:100%;padding:1.2rem 2rem;
+  background:linear-gradient(135deg,#D4A843 0%,#C8A24D 50%,#B8922D 100%);
+  color:var(--black);
+  font-family:'Bebas Neue',serif;font-size:1.15rem;letter-spacing:0.22em;
   border:none;cursor:pointer;border-radius:4px;
-  transition:background 0.3s,transform 0.2s,box-shadow 0.2s;
-  box-shadow:0 4px 20px rgba(200,162,77,0.3);
+  transition:all 0.3s;
+  box-shadow:0 4px 24px rgba(200,162,77,0.4), 0 1px 0 rgba(255,255,255,0.15) inset;
   text-decoration:none;margin-bottom:0.8rem;
+  position:relative;overflow:hidden;
 }
-.add-to-cart:hover{background:var(--gold-soft);transform:translateY(-2px);box-shadow:0 6px 28px rgba(200,162,77,0.4)}
+.add-to-cart::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,0.12) 0%,transparent 60%);
+  pointer-events:none;
+}
+.add-to-cart:hover{
+  background:linear-gradient(135deg,#E0B84E 0%,#D4A843 50%,#C49030 100%);
+  transform:translateY(-2px);
+  box-shadow:0 8px 32px rgba(200,162,77,0.5), 0 1px 0 rgba(255,255,255,0.2) inset;
+}
+.add-to-cart:active{transform:translateY(0)}
+.btn-lock{font-size:0.9rem}
+.btn-text{font-size:1.15rem;letter-spacing:0.2em}
+.btn-arrow{font-size:1.1rem;transition:transform 0.2s}
+.add-to-cart:hover .btn-arrow{transform:translateX(4px)}
 
 /* SECURE CHECKOUT */
 .secure-label{
@@ -397,7 +413,9 @@ footer{
     </div>
 
     <a href="https://checkout.dodopayments.com/buy/pdt_0NggJxuXhsEpHVa9swzKF?quantity=1" class="add-to-cart" id="buy-btn">
-      🔒 &nbsp; Add to Cart
+      <span class="btn-lock">🔒</span>
+      <span class="btn-text">Buy Now</span>
+      <span class="btn-arrow">→</span>
     </a>
 
     <div class="secure-label">
@@ -449,7 +467,13 @@ footer{
 </div>
 
 <footer>
-  © 2025 Dylan Rothmere · All rights reserved &nbsp;·&nbsp; kryptoscycle.com
+  <p style="font-size:0.65rem;color:rgba(245,241,232,0.5);letter-spacing:0.1em;margin-bottom:0.8rem">© 2026 Kryptos Cycle · All rights reserved</p>
+  <div style="display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap">
+    <a href="refund.html" style="font-size:0.6rem;letter-spacing:0.15em;color:rgba(245,241,232,0.5);text-decoration:none;text-transform:uppercase">Refund Policy</a>
+    <a href="privacy.html" style="font-size:0.6rem;letter-spacing:0.15em;color:rgba(245,241,232,0.5);text-decoration:none;text-transform:uppercase">Privacy Policy</a>
+    <a href="terms.html" style="font-size:0.6rem;letter-spacing:0.15em;color:rgba(245,241,232,0.5);text-decoration:none;text-transform:uppercase">Terms of Service</a>
+    <a href="contact.html" style="font-size:0.6rem;letter-spacing:0.15em;color:rgba(245,241,232,0.5);text-decoration:none;text-transform:uppercase">Contact</a>
+  </div>
 </footer>
 
 <script>
